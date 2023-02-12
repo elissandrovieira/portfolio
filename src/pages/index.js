@@ -243,7 +243,9 @@ export default function Home() {
           }}>{language.about.text4}</p>
           <p>{language.about.text5}</p>
           <div>
-            <DownloadBtn>{language.about.downloadBtn}</DownloadBtn>
+            <a href={language.about.downloadHref} download="cv-elissandro-vieira">
+              <DownloadBtn>{language.about.downloadBtn}</DownloadBtn>
+            </a>
             <Link href="#contact">
               <ContactBtn>{language.about.contactBtn}</ContactBtn>
             </Link>

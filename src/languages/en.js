@@ -45,6 +45,7 @@ const en = {
     `,
 
     downloadBtn: 'Download CV',
+    downloadHref: 'https://github.com/elissandrovieira/portfolio/raw/main/public/cv/en/cv-elissandro-vieira.pdf',
     contactBtn: 'Contact me'
   },
 
