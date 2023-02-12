@@ -1,4 +1,3 @@
-import pt from '@/languages/pt'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -80,7 +79,7 @@ const Header = () => {
     <Container className="mainContainer">
       <Link href="/">
         <Image
-        src="/logo.svg"
+        src="/img/header/logo.svg"
         alt="eli.vieira logo"
         width={109}
         height={26}
@@ -108,7 +107,7 @@ const Header = () => {
           <li>
             <Languages>
             <Image
-            src="/globe.svg"
+            src="/img/header/globe.svg"
             alt="languages"
             width={20}
             height={20}
