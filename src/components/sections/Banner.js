@@ -12,13 +12,16 @@ const HomeBanner = styled.section`
 `
 const HomeBannerMb = styled.section`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   max-width: 1200px;
   padding-left: 30px;
   margin-top: -50px;
   height: 150vh;
   width: 100vw;
+
+  @media (max-width: 390px){
+    height: 170vh;
+  }
 `
 
 const TitleBanner = styled.div`
@@ -31,7 +34,7 @@ const TitleBanner = styled.div`
   @media(max-width: 700px) {
     width: 100%;
     height: 100vh;
-    padding-bottom: 400px;
+   justify-content: center;
   }
 `
 
@@ -43,6 +46,7 @@ const FirstLine = styled.span`
 const Title = styled.h1`
   font-weight: 900;
   font-size: 72px;
+  
 `
 
 const LastLine = styled.span`

@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
@@ -8,7 +9,16 @@ const CardContainer = styled.div`
   overflow: hidden;
 `
 
-const FeaturesCardSm = ({ language, carousel, width }) => {
+const FeaturesCardSm = ({ language }) => {
+  const [width, setWidth] = useState(0)
+  const carousel = useRef()
+
+  useEffect(() => {
+    const scrollWidth = carousel.current?.scrollWidth
+    const offsetWidth = carousel.current?.offsetWidth
+    setWidth(scrollWidth - offsetWidth)
+  }, [])
+
   return (
     <CardContainer>
       <motion.div style={{

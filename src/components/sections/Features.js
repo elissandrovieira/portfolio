@@ -1,4 +1,3 @@
-import { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
@@ -25,16 +24,6 @@ const TechFeatures = styled.section`
 
 
 const Features = ({ language }) => {
-  const [width, setWidth] = useState(0)
-  const carousel = useRef()
-
-
-  useEffect(() => {
-    const scrollWidth = carousel.current?.scrollWidth
-    const offsetWidth = carousel.current?.offsetWidth
-    setWidth(scrollWidth - offsetWidth)
-  }, [])
-
   const maxWidthMd = useMediaQuery('(max-width:1100px)') & useMediaQuery('(min-width:549px)')
   const maxWidthSm = useMediaQuery('(max-width:550px)')
 
@@ -46,8 +35,6 @@ const Features = ({ language }) => {
         ? (
           <FeaturesCardSm
           language={language}
-          carousel={carousel}
-          width={width}
           />
           ) : maxWidthMd
         ? (

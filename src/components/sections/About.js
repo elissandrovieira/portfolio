@@ -2,8 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import { HorizontalIcons } from '@/components/Icons'
-import { FilledButton, OutlinedButton } from '@/components/Buttons'
+import { HorizontalIcons} from '@/components/ContactIcons'
 
 const AboutSection = styled.section`
   display: flex;
@@ -14,6 +13,7 @@ const AboutSection = styled.section`
   border-radius: 20px;
   box-shadow: 10px 10px 50px #13283426;
 `
+
 const ImageAbout = styled.div`
   width: 50%;
 `
@@ -28,20 +28,41 @@ const AboutContent = styled.div`
 
   p{
     font-size: 14px;
-    line-height: 20px;
   };
 
   div{
     margin-top: 20px;
   }
 `
-
+const DownloadBtn = styled.button`
+  background-color: #17A1A6;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  padding: 7px 10px;
+  margin-right: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+`
+const ContactBtn = styled.button`
+  background-color: #D4F8FA;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #17A1A6;
+  padding: 7px 10px;
+  border: solid 2px #17A1A6;
+  border-radius: 5px;
+  cursor: pointer;
+`
 
 const About = ({ language }) => {
   return (
     <AboutSection id='about'>
       <ImageAbout>
-        <Image
+      <Image
           src="/img/about-image.png"
           alt={language.about.title}
           quality={100}
@@ -52,7 +73,7 @@ const About = ({ language }) => {
             bottom: 0,
             left: '20px',
           }}
-        />
+          />
       </ImageAbout>
       <AboutContent>
         <h2>{language.about.title}</h2>
@@ -67,14 +88,10 @@ const About = ({ language }) => {
         <p>{language.about.text5}</p>
         <div>
           <a href={language.about.downloadHref}>
-            <FilledButton
-            margin='0 15px 0 0'
-            >
-              {language.about.downloadBtn}
-            </FilledButton>
+            <DownloadBtn>{language.about.downloadBtn}</DownloadBtn>
           </a>
           <Link href="#contact">
-            <OutlinedButton>{language.about.contactBtn}</OutlinedButton>
+            <ContactBtn>{language.about.contactBtn}</ContactBtn>
           </Link>
         </div>
         <div>
