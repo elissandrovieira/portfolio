@@ -25,6 +25,10 @@ const Menu = styled.ul`
       margin: 0;
     }
   }
+
+  @media( max-width: 800px) {
+    display: none;
+  }
 `
 const ContactBtn = styled.button`
 background-color: #17A1A6;
@@ -38,41 +42,27 @@ border-radius: 5px;
 cursor: pointer;
 
 `
-const Languages = styled.div`
+const Languages = styled.button`
 display: flex;
 align-items: center;
 background-color: #A1ADC3;
-padding: 0 0 0 10px;
+font-family: 'Montserrat', sans-serif;
+font-size: 12px;
+font-weight: 700;
+color: white;
+padding: 5px 15px;
+border: none;
 border-radius: 5px;
 cursor: pointer;
-
-  select{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    color: white;
-    border: none;
-    background: transparent;
-    padding: 7px 0 7px 10px;
-    cursor: pointer;
-  }
-  option{
-    background-color: #A1ADC3;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    color: white;
-    padding: 5px;
-  }
 `
 
 const Header = () => {
-  const router = useRouter()
+  const {locale, push} = useRouter()
   
   const handleChangeLanguage = (e) => {
-    e.target.value === 'pt'
-    ? router.push('/', '/', { locale: 'pt' })
-    : router.push('/', '/', { locale: 'en' })
+    locale === 'pt'
+    ? push('/', '/', { locale: 'en' })
+    : push('/', '/', { locale: 'pt' })
   }
 
   return (
@@ -87,36 +77,40 @@ const Header = () => {
       </Link>
       <nav>
         <Menu>
-          <Link href="#features" legacyBehavior>
+          <Link href="#features" legacyBehavior scroll={false}>
             <li>Features</li>
           </Link>
-          <Link href="#about" legacyBehavior>
+          <Link href="#about" legacyBehavior scroll={false}>
             <li>About</li>
           </Link>
-          <Link href="#skills" legacyBehavior>
+          <Link href="#skills" legacyBehavior scroll={false}>
             <li>Skills</li>
           </Link>
-          <Link href="#projects" legacyBehavior>
+          <Link href="#projects" legacyBehavior scroll={false}>
             <li>Projects</li>
           </Link>
-          <Link href="#contact" locale="pt" legacyBehavior>
+          <Link href="#contact" legacyBehavior scroll={false}>
             <li>
               <ContactBtn>Contact me</ContactBtn>
             </li>
           </Link>
           <li>
-            <Languages>
+          <Languages onClick={handleChangeLanguage}>
             <Image
             src="/img/header/globe.svg"
             alt="languages"
             width={20}
             height={20}
+            style={{
+              marginRight: '10px'
+            }}
             />
-              <select onChange={(e) => handleChangeLanguage(e)}>
-                <option value="en">English</option>
-                <option value="pt">Portuguese</option>
-              </select>
-            </Languages>
+            {
+              locale ==='pt'
+              ? 'EN'
+              : 'PT'
+            }
+          </Languages>
           </li>
           
         </Menu>

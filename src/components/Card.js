@@ -6,11 +6,18 @@ const Feature = styled.div`
   flex-direction: column;
   align-items: center;
   width: 250px;
+  min-width: 250px;
   height: 250px;
   padding: 40px 20px;
   background-color: white;
   border-radius: 20px;
   box-shadow: 10px 10px 50px #13283426;
+
+  @media (max-width: 1100px) {
+    width: 100vw;
+    height: 250px;
+    margin: 20px;
+  }
 `
 const CardTitle = styled.h3`
   font-size: 14px;

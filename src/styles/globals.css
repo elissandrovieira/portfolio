@@ -6,8 +6,18 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body{
   font-family: 'Montserrat', sans-serif;
   color: #1F2022;
   background-color: #EEF0F4;
+  overflow-x: hidden;
+}
+
+.homeBannerMb{
+  background-image: url('../../public/img/gradient/gradient-top-mb.jpg');
+  background-size: cover;
 }

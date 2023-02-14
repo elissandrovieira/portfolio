@@ -5,70 +5,13 @@ import { useRouter } from 'next/router'
 import styled from 'styled-components'
 
 import TemplateDefault from '../templates/Default'
-import { FeatureCard } from '@/components/Card'
+import Banner from '@/components/sections/Banner'
+import Features from '@/components/sections/Features'
+
 import { HorizontalIcons} from '@/components/ContactIcons'
-import CvEn from '@/cv/en/cv-elissandro-vieira.pdf'
 
 import en from '../languages/en'
 import pt from '../languages/pt'
-
-const Banner = styled.section`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  padding: 50px 15px 0 15px;
-  margin: 0 auto;
-`
-
-const TitleBanner = styled.div`
-  width: 50%;
-  padding-bottom: 50px;
-`
-
-const FirstLine = styled.span`
-  text-transform: uppercase;
-  font-size: 18px;
-`
-
-const Title = styled.h1`
-  font-weight: 900;
-  font-size: 72px;
-`
-
-const LastLine = styled.span`
-  font-size: 15px;
-  letter-spacing: -0.3px;
-`
-
-const ImageContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 50%;
-
-  div{
-    position: relative;
-    width: 400px;
-    height: 510px;
-
-  }
-`
-
-const Features = styled.section`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 100px 15px 0 15px;
-
-  h2 {
-    font-size: 24px;
-    margin-bottom: 50px;
-  }
-
-  div{
-    display: flex;
-    justify-content: space-between;
-  }
-`
 
 const About = styled.section`
   display: flex;
@@ -124,7 +67,7 @@ const ContactBtn = styled.button`
   cursor: pointer;
 `
 
-export default function Home() {
+const Home = () => {
   const { locale } = useRouter()
 
   const [ language, setLanguage ] = useState(en)
@@ -138,85 +81,9 @@ export default function Home() {
 
   return (
     <TemplateDefault>
-      <Banner id='home'>
-        <TitleBanner>
-          <FirstLine>{language.banner.firstLine}</FirstLine>
-          <Title>{language.banner.title}</Title>
-          <LastLine>{language.banner.lastLine}</LastLine>
-        </TitleBanner>
-        <ImageContainer>
-          <div>
-            <Image
-            src="/img/banner/imageBanner.png"
-            alt="eli.vieira logo"
-            quality={100}
-            fill
-            style={{objectFit: 'contain'}}
-            />
-          </div>
-        </ImageContainer>
-      </Banner>
-      <Features id='features'>
-        <h2>{language.features.title}</h2>
-        <div>
-          <FeatureCard
-            image={
-              <Image
-              src={language.features.cards[1].image}
-              alt={language.features.cards[1].title}
-              width={55}
-              height={72}
-              style={{marginBottom: '20px'}}
-              />
-            }
-            title={language.features.cards[1].title}
-            text={language.features.cards[1].text}
-          />
-          <FeatureCard
-            image={
-              <Image
-              src={language.features.cards[2].image}
-              alt={language.features.cards[2].title}
-              width={55}
-              height={72}
-              style={{marginBottom: '20px'}}
-              />
-            }
-            title={language.features.cards[2].title}
-            text={language.features.cards[2].text}
-          />
-          <FeatureCard
-            image={
-              <Image
-              src={language.features.cards[3].image}
-              alt={language.features.cards[3].title}
-              width={55}
-              height={72}
-              style={{marginBottom: '20px'}}
-              />
-            }
-            title={language.features.cards[3].title}
-            text={language.features.cards[3].text}
-          />
-          <FeatureCard
-            image={
-              <Image
-              src={language.features.cards[4].image}
-              alt={language.features.cards[4].title}
-              width={55}
-              height={72}
-              style={{marginBottom: '20px'}}
-              />
-            }
-            title={language.features.cards[4].title}
-            text={language.features.cards[4].text}
-            text2={language.features.cards[4].text2}
-            text3={language.features.cards[4].text3}
-          />
-          
-        </div>
-      </Features>
-      <About id='about'>
+      <Banner language={language} />
+      <Features language={language} />
+      {/*<About id='about'>
         <ImageAbout>
         <Image
             src="/img/about-image.png"
@@ -243,7 +110,7 @@ export default function Home() {
           }}>{language.about.text4}</p>
           <p>{language.about.text5}</p>
           <div>
-            <a href={language.about.downloadHref} download="cv-elissandro-vieira">
+            <a href={language.about.downloadHref}>
               <DownloadBtn>{language.about.downloadBtn}</DownloadBtn>
             </a>
             <Link href="#contact">
@@ -255,8 +122,9 @@ export default function Home() {
           </div>
 
         </AboutContent>
-      </About>
-
+        </About>*/}
     </TemplateDefault>
   )
 }
+
+export default Home
