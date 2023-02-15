@@ -4,8 +4,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled, { useTheme } from 'styled-components'
 
-import light from '@/theme/light'
-import { DarkModeIcon, LightModeIcon } from './Icons'
+import dark from '@/theme/dark'
+import { LogoIcon } from '@/components/Icons'
 
 const Container = styled.div`
   display: flex;
@@ -28,7 +28,9 @@ const Menu = styled.ul`
   li{
     list-style: none;
     margin-right: 35px;
+    color: ${props => props.theme.pallete.text.primary};
     cursor: pointer;
+
     &:last-child{
       margin: 0;
     }
@@ -74,18 +76,10 @@ const ThemeBtn = styled.button`
 `
 
 const Header = ({handleChangeTheme}) => {
-  const [themeIcon, setThemeIcon] = useState(useTheme === light ? LightModeIcon : DarkModeIcon)
-
-  const handleTheme = () => {
-    setThemeIcon(
-      themeIcon === LightModeIcon
-      ? DarkModeIcon
-      : LightModeIcon
-    )
-    handleChangeTheme()
-  }
+  const theme =  useTheme()
 
   const {locale, push} = useRouter()
+
   const handleChangeLanguage = (e) => {
     locale === 'pt'
     ? push('/', '/', { locale: 'en' })
@@ -95,12 +89,7 @@ const Header = ({handleChangeTheme}) => {
   return (
     <Container className="mainContainer">
       <Link href="/">
-        <Image
-        src="/img/header/logo.svg"
-        alt="eli.vieira logo"
-        width={109}
-        height={26}
-        />
+        <LogoIcon color={theme.pallete.text.primary} />
       </Link>
       <Navigation>
         <Menu>
@@ -141,13 +130,14 @@ const Header = ({handleChangeTheme}) => {
           </li>
         </Menu>
         <ThemeBtn
-        onClick={handleTheme}
+        onClick={handleChangeTheme}
         >
-          {
-            themeIcon === LightModeIcon
-            ? <LightModeIcon />
-            : <DarkModeIcon />
-          }
+          <Image
+            src={theme === dark ? "/img/header/light-mode.svg" : "/img/header/dark-mode.svg"}
+            alt="theme changer"
+            width={26}
+            height={26}
+            />
         </ThemeBtn>
       </Navigation>
     </Container>
