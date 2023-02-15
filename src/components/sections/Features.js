@@ -15,6 +15,9 @@ const TechFeatures = styled.section`
     margin-bottom: 50px;
   }
 
+  @media (max-width: 1100px) {
+    padding: 0;
+  }
   @media (max-width: 700px) {
     padding: 0 15px;
     margin-top: -300px;

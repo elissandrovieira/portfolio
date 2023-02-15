@@ -160,8 +160,6 @@ export const HorizontalIcons = () => {
   return (
     <Hicons>
       <li>
-      </li>
-      <li>
         <a href="https://wa.me/5521982485926" target= "_blank" rel="noopener noreferrer">
           <div />
           <PhoneIcon
