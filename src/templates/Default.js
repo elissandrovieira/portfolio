@@ -1,7 +1,9 @@
 import styled from 'styled-components'
-import Header from '../components/Header'
 import Image from 'next/image'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import { useTheme } from 'styled-components'
+
+import dark from '@/theme/dark'
 
 const GradientTop = styled.div`
   position: absolute;
@@ -33,18 +35,18 @@ const GradientTop = styled.div`
 `
 
 const Default = ({ children }) => {
+  const theme =  useTheme()
 
   const maxWidth = useMediaQuery('(max-width:700px)')
   return (
     <>
-      <Header />
       <GradientTop>
         {
           maxWidth
           ? null
           : (
             <Image
-            src="/img/gradient/gradient-top.jpg"
+            src={theme === dark ? "/img/gradient/gradient-top-dark.jpg" : "/img/gradient/gradient-top.jpg"}
             alt="eli.vieira logo"
             quality={100}
             width={1028}

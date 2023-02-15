@@ -1,7 +1,11 @@
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
+
+import light from '@/theme/light'
+import { DarkModeIcon, LightModeIcon } from './Icons'
 
 const Container = styled.div`
   display: flex;
@@ -11,6 +15,10 @@ const Container = styled.div`
   padding: 20px 15px 0 15px;
   margin: 0 auto;
 `
+const Navigation = styled.nav`
+  display: flex;
+`
+
 const Menu = styled.ul`
   display: flex;
   align-items: center;
@@ -30,8 +38,9 @@ const Menu = styled.ul`
     display: none;
   }
 `
+
 const ContactBtn = styled.button`
-background-color: #17A1A6;
+background-color: ${props => props.theme.pallete.button.primary};
 font-family: 'Montserrat', sans-serif;
 font-size: 12px;
 font-weight: 700;
@@ -56,9 +65,27 @@ border-radius: 5px;
 cursor: pointer;
 `
 
-const Header = () => {
+const ThemeBtn = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 35px;
+  z-index: 1;
+`
+
+const Header = ({handleChangeTheme}) => {
+  const [themeIcon, setThemeIcon] = useState(useTheme === light ? LightModeIcon : DarkModeIcon)
+
+  const handleTheme = () => {
+    setThemeIcon(
+      themeIcon === LightModeIcon
+      ? DarkModeIcon
+      : LightModeIcon
+    )
+    handleChangeTheme()
+  }
+
   const {locale, push} = useRouter()
-  
   const handleChangeLanguage = (e) => {
     locale === 'pt'
     ? push('/', '/', { locale: 'en' })
@@ -75,7 +102,7 @@ const Header = () => {
         height={26}
         />
       </Link>
-      <nav>
+      <Navigation>
         <Menu>
           <Link href="#features" legacyBehavior scroll={false}>
             <li>Features</li>
@@ -112,9 +139,17 @@ const Header = () => {
             }
           </Languages>
           </li>
-          
         </Menu>
-      </nav>
+        <ThemeBtn
+        onClick={handleTheme}
+        >
+          {
+            themeIcon === LightModeIcon
+            ? <LightModeIcon />
+            : <DarkModeIcon />
+          }
+        </ThemeBtn>
+      </Navigation>
     </Container>
   )
 }
