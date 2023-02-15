@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import styled from 'styled-components'
 
-import { FeatureCard } from '@/components/Card'
+import { FeatureCard } from '@/components/cards/Card'
+import { Interfaces, AgileMet, WebDev, AppDesign } from '../Vectors'
 
 const CardContainer = styled.div`
   display: flex;
@@ -14,26 +15,14 @@ const FeaturesCardMd = ({ language }) => {
       <CardContainer>
         <FeatureCard
           image={
-            <Image
-              src={language.features.cards[1].image}
-              alt={language.features.cards[1].title}
-              width={55}
-              height={72}
-              style={{ marginBottom: '20px' }}
-            />
+            <Interfaces margin="0 0 20px 0" />
           }
           title={language.features.cards[1].title}
           text={language.features.cards[1].text}
         />
         <FeatureCard
           image={
-            <Image
-              src={language.features.cards[2].image}
-              alt={language.features.cards[2].title}
-              width={55}
-              height={72}
-              style={{ marginBottom: '20px' }}
-            />
+            <AgileMet margin="0 0 20px 0" />
           }
           title={language.features.cards[2].title}
           text={language.features.cards[2].text}
@@ -42,26 +31,14 @@ const FeaturesCardMd = ({ language }) => {
       <CardContainer>
         <FeatureCard
           image={
-            <Image
-              src={language.features.cards[3].image}
-              alt={language.features.cards[3].title}
-              width={55}
-              height={72}
-              style={{ marginBottom: '20px' }}
-            />
+            <WebDev margin="0 0 20px 0" />
           }
           title={language.features.cards[3].title}
           text={language.features.cards[3].text}
         />
         <FeatureCard
           image={
-            <Image
-              src={language.features.cards[4].image}
-              alt={language.features.cards[4].title}
-              width={55}
-              height={72}
-              style={{ marginBottom: '20px' }}
-            />
+            <AppDesign margin="0 0 20px 0" />
           }
           title={language.features.cards[4].title}
           text={language.features.cards[4].text}

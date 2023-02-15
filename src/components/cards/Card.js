@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import styled from 'styled-components'
 
 const Feature = styled.div`
@@ -9,9 +8,9 @@ const Feature = styled.div`
   min-width: 250px;
   height: 250px;
   padding: 40px 20px;
-  background-color: white;
+  background-color: ${props => props.theme.pallete.card.primary};
   border-radius: 20px;
-  box-shadow: 10px 10px 50px #13283426;
+  box-shadow: 10px 10px 50px ${props => props.theme.pallete.shadow};
 
   @media (max-width: 1100px) {
     width: 100vw;

@@ -13,7 +13,7 @@ export default createGlobalStyle`
 
   body{
   font-family: 'Montserrat', sans-serif;
-  color: #1F2022;
+  color: ${props => props.theme.pallete.text.primary};
   background-color: ${props => props.theme.pallete.background};
   overflow-x: hidden;
   }

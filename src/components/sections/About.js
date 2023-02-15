@@ -3,14 +3,14 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import { useTheme } from 'styled-components'
 
-import { HorizontalIcons} from '@/components/ContactIcons'
+import { HorizontalIcons } from '@/components/Icons'
 
 const AboutSection = styled.section`
   display: flex;
   position: relative;
   max-width: 1170px;
   margin: 100px auto 0 auto;
-  background-color: white;
+  background-color: ${props => props.theme.pallete.card.primary};
   border-radius: 20px;
   box-shadow: 10px 10px 50px #13283426;
 `
@@ -97,7 +97,7 @@ const About = ({ language }) => {
           </Link>
         </div>
         <div>
-          <HorizontalIcons />
+          <HorizontalIcons colors='red' />
         </div>
 
       </AboutContent>

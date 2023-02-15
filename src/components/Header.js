@@ -1,11 +1,11 @@
-import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled, { useTheme } from 'styled-components'
 
 import dark from '@/theme/dark'
-import { LogoIcon } from '@/components/Icons'
+import Button from './Button'
+import { LogoIcon, LanguageIcon } from '@/components/Icons'
 
 const Container = styled.div`
   display: flex;
@@ -107,26 +107,29 @@ const Header = ({handleChangeTheme}) => {
           </Link>
           <Link href="#contact" legacyBehavior scroll={false}>
             <li>
-              <ContactBtn>Contact me</ContactBtn>
+              <Button>Contact me</Button>
             </li>
           </Link>
           <li>
-          <Languages onClick={handleChangeLanguage}>
-            <Image
-            src="/img/header/globe.svg"
-            alt="languages"
-            width={20}
-            height={20}
-            style={{
-              marginRight: '10px'
-            }}
-            />
-            {
-              locale ==='pt'
-              ? 'EN'
-              : 'PT'
-            }
-          </Languages>
+            <Button 
+            backgroundColor="transparent"
+            border
+            color={theme.pallete.text.primary}
+            padding= '2px 10px'
+            fontSize='14px'
+            width="80px"
+            onClick={handleChangeLanguage}
+            >
+              <LanguageIcon
+              color={theme.pallete.text.primary}
+              margin='0 10px 0 0'
+              />
+              {
+                locale ==='pt'
+                ? 'EN'
+                : 'PT'
+              }
+            </Button>
           </li>
         </Menu>
         <ThemeBtn

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 
 const Hicons = styled.ul`
     display: flex;
@@ -48,7 +48,7 @@ export const PhoneIcon = ({color, margin}) => {
     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" style={{
       margin: margin
     }}>
-      <circle cx="15" cy="15" r="14" stroke="#1F2022" strokeWidth="2" />
+      <circle cx="15" cy="15" r="14" stroke={ color ? color : "#1F2022"} strokeWidth="2" />
       <path d="M22.82 19.7933C23.0147 19.9887 23.1607 20.2272 23.2461 20.4895C23.3315 20.7518 23.3539 21.0305 23.3115 21.3031C23.2692 21.5757 23.1632 21.8344 23.0023 22.0584C22.8413 22.2825 22.6298 22.4654 22.385 22.5925C20.9859 23.3403 19.3558 23.5314 17.8217 23.1275C13.75 22.1025 7.89749 16.25 6.87249 12.1783C6.4686 10.6442 6.65971 9.01409 7.40749 7.61499C7.53457 7.37016 7.71753 7.1587 7.94154 6.99772C8.16554 6.83675 8.42431 6.7308 8.69689 6.68844C8.96946 6.64608 9.24818 6.66851 9.51048 6.7539C9.77278 6.8393 10.0113 6.98527 10.2067 7.17999L11.9442 8.91666C12.1947 9.1647 12.3643 9.48283 12.4305 9.82914C12.4967 10.1754 12.4564 10.5337 12.315 10.8567C12.1602 11.219 11.9405 11.55 11.6667 11.8333C9.67999 13.82 16.1808 20.3208 18.1667 18.3333C18.45 18.0585 18.7813 17.8379 19.1442 17.6825C19.4671 17.5408 19.8254 17.5005 20.1717 17.5667C20.5181 17.6329 20.8362 17.8026 21.0842 18.0533L22.82 19.7933Z" fill={ color ? color : "#1F2022"} />
     </svg>
   )
@@ -155,31 +155,42 @@ export const LightModeIcon = ({ color, margin}) => {
 }
 
 export const HorizontalIcons = () => {
+  const theme = useTheme()
 
   return (
     <Hicons>
       <li>
+      </li>
+      <li>
         <a href="https://wa.me/5521982485926" target= "_blank" rel="noopener noreferrer">
           <div />
-          <PhoneIcon />
+          <PhoneIcon
+          color={theme.pallete.text.primary}
+          />
         </a>
       </li>
       <li>
         <a href="mailto:teofiloeli@gmail.com" target= "_blank" rel="noopener noreferrer">
           <div />
-          <EmailIcon />
+          <EmailIcon
+          color={theme.pallete.text.primary}
+          />
         </a>
       </li>
       <li>
         <a href="https://www.linkedin.com/in/elissandro-junior" target= "_blank" rel="noopener noreferrer">
           <div />
-          <LinkedinIcon />
+          <LinkedinIcon
+          color={theme.pallete.text.primary}
+          />
         </a>
       </li>
       <li>
         <a href="https://github.com/elissandrovieira" target= "_blank" rel="noopener noreferrer">
           <div />
-          <GithubIcon />
+          <GithubIcon
+          color={theme.pallete.text.primary}
+          />
         </a>
       </li>
     </Hicons>

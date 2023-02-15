@@ -2,7 +2,7 @@ const dark = {
   pallete: {
     text:{
       primary: '#FFFFFF',
-      secondary: '#1F2022',
+      secondary: '#f',
       tertiary: '#17A1A6'
     },
     button: {
@@ -13,7 +13,7 @@ const dark = {
       primary: '#383C44',
       secondary: '#282A2D',
     },
-    shadow: '#020000',
+    shadow: '#00000026',
     background: '#1F1F21',
     gradient: '../../public/img/gradient/gradient-top-dark.jpg',
     gradientMb: `url('/img/gradient/gradient-top-mb-dark.jpg')`

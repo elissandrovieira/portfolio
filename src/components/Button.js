@@ -1,11 +1,21 @@
 import { useState, useEffect } from 'react'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 
-import ligth from '@/theme/light'
+const Btn = styled.button`
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+`
 
-const Button = ({ children, backgroundColor, color, padding, margin, border }) => {
-  const textColor = ligth.pallete.text.secondary
-  const buttonColor = ligth.pallete.button.primary 
+const Button = ({ children, backgroundColor, color, padding, margin, border, fontSize, width, onClick }) => {
+  const theme = useTheme()
+  const textColor = '#FFFFFF'
+  const buttonColor = theme.pallete.button.primary 
 
   const [borderColored, setBorderColored] = useState(textColor)
 
@@ -16,22 +26,19 @@ const Button = ({ children, backgroundColor, color, padding, margin, border }) =
 
   const outlinedBorder = `solid 2px ${borderColored}`
   
-  const Btn = styled.button`
-  background-color: ${backgroundColor ? backgroundColor : buttonColor};
-  color: ${color ? color : textColor};
-  padding: ${padding ? padding : '7px 10px'};
-  margin: ${margin ? margin : '0'};
-  border: ${border ? outlinedBorder : 'none'};
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  `
 
   return (
-    <Btn>
+    <Btn style={{
+      backgroundColor: backgroundColor ? backgroundColor : buttonColor,
+      color: color ? color : textColor,
+      padding: padding ? padding : '7px 10px',
+      margin: margin ? margin : '0',
+      border: border ? outlinedBorder : 'none',
+      fontSize: fontSize ? fontSize : '12px',
+      width: width ? width : 'none',
+    }}
+    onClick={onClick}
+    >
       {children}
     </Btn>
   )
