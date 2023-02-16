@@ -160,7 +160,6 @@ const Header = ({handleChangeTheme}) => {
               <Button
               backgroundColor="transparent"
               color={theme.pallete.text.primary}
-              fontSize="16px"
               onClick={() => setIsOpen(isOpen => !isOpen)}
               >
                 <motion.div

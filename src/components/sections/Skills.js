@@ -20,15 +20,21 @@ const SkillsSection = styled.section`
   padding: 100px 15px 0 15px;
   margin: 0 auto;
 
-  @media (max-width: 850px) {
-    display: flex;
-    justify-content: center;
+  h2 {
+    font-size: 24px;
+    margin-bottom: 50px;
   }
 `
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
 const SkillsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
+  
   :last-child{
     margin-bottom: 0;
   }
@@ -38,12 +44,13 @@ const SkillsContainerMb = styled.div`
   flex-direction: column;
   width: 100%;
   margin-right: 20px;
+
   :last-child{
     margin-right: 0;
   }
 `
 
-const Skills = () => {
+const Skills = ({ language }) => {
   const theme = useTheme()
   const maxWidthMd = useMediaQuery('(max-width:850px)')
 
@@ -145,10 +152,11 @@ const Skills = () => {
 
   return (
     <SkillsSection>
+      <h2>{language.skills.title}</h2>
       {
         maxWidthMd
           ? (
-            <>
+            <Container>
               <SkillsContainerMb>
                 {
                   skillsListMb[0].map((e) => (
@@ -171,7 +179,7 @@ const Skills = () => {
                   ))
                 }
               </SkillsContainerMb>
-            </>
+            </Container>
           ) : (
             <>
               <SkillsContainer>

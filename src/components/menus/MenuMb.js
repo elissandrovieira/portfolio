@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import styled, { useTheme } from 'styled-components'
 
 const variants = {
-  open: { opacity: 1, display: 'block' },
+  open: { display: 'block', opacity: 1 },
   closed: { opacity: 0, display: 'none' },
 }
 
@@ -60,8 +60,6 @@ const List = styled.ul`
 `
 
 const MenuMb = ({ isOpen }) => {
-  const [open, setOpen] = useState(false)
-
   const theme =  useTheme()
 
   return (

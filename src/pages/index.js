@@ -28,7 +28,7 @@ const Home = () => {
       <Banner language={language} />
       <Features language={language} />
       <About language={language} />
-      <Skills />
+      <Skills language={language} />
       <Projects language={language} />
     </TemplateDefault>
   )
