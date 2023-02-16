@@ -55,7 +55,23 @@ const en = {
 
   projects: {
     title: 'Last Projects',
-    seeMoreBtn: 'See more Projects here'
+
+    detailsBtn: 'See details',
+
+    seeMoreBtn: 'See more Projects here',
+
+    projectsList: [
+      {
+        image: '/img/products/second-hand.png',
+        title: 'Second-Hand Marketplace',
+        text: 'A used items marketplace. Search and buy, sell items.'
+      },
+      {
+        image: '/img/products/to-do-list.png',
+        title: 'To-Do List',
+        text: 'Register your tasks, delete or complete them.'
+      },
+    ]
   },
 
   contact: {

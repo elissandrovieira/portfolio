@@ -11,7 +11,7 @@ const light = {
     },
     card:{
       primary: '#FFFFFF',
-      secondary: '#A1ADC3',
+      secondary: '#b2b7bf',
     },
     shadow: '#13283426',
     background: '#EEF0F4',
