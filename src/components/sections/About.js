@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
-import { HorizontalIcons } from '@/components/Icons'
+import { HorizontalIcons } from '@/components/icons/Icons'
+import Button from '../Button'
 import AboutImage from '../../../public/img/about-image.png'
 import AboutImageMb from '../../../public/img/about-image-mb.png'
 
@@ -72,31 +72,10 @@ const AboutContent = styled.div`
     }
   } 
 `
-const DownloadBtn = styled.button`
-  background-color: #17A1A6;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: white;
-  padding: 7px 10px;
-  margin-right: 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-`
-const ContactBtn = styled.button`
-  background-color: #D4F8FA;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: #17A1A6;
-  padding: 7px 10px;
-  border: solid 2px #17A1A6;
-  border-radius: 5px;
-  cursor: pointer;
-`
 
 const About = ({ language }) => {
+  const theme = useTheme()
+
   const maxWidthMd = useMediaQuery('(max-width: 1080px)')
   const maxWidthSm = useMediaQuery('(max-width: 850px)')
   const maxWidthMb = useMediaQuery('(max-width: 700px)')
@@ -149,12 +128,18 @@ const About = ({ language }) => {
               <p>{language.about.text5}</p>
             </>
           )}
-        <div>
-          <a href={language.about.downloadHref}>
-            <DownloadBtn>{language.about.downloadBtn}</DownloadBtn>
+        <div style={{ display: 'flex' }}>
+          <a href={language.about.downloadHref} style={{ textDecoration: 'none' }}>
+            <Button>{language.about.downloadBtn}</Button>
           </a>
-          <Link href="#contact">
-            <ContactBtn>{language.about.contactBtn}</ContactBtn>
+          <Link href="#contact" legacyBehavior>
+            <Button
+            border
+            color={theme.pallete.text.tertiary}
+            backgroundColor={theme.pallete.button.secondary}
+            >
+              {language.about.contactBtn}
+            </Button>
           </Link>
         </div>
         <div>

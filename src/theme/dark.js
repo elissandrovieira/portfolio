@@ -2,12 +2,12 @@ const dark = {
   pallete: {
     text:{
       primary: '#FFFFFF',
-      secondary: '#f',
-      tertiary: '#17A1A6'
+      secondary: '#1F2022',
+      tertiary: '#dba947'
     },
     button: {
-      primary: '#1D5C5F',
-      secondary: '#CFF7F9'
+      primary: '#dba947',
+      secondary: '#FFEFD0'
     },
     card:{
       primary: '#383C44',

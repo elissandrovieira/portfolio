@@ -4,6 +4,7 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme } from 'styled-components'
 
 import dark from '@/theme/dark'
+import Footer from '@/components/Footer'
 
 const GradientTop = styled.div`
   position: absolute;
@@ -55,8 +56,8 @@ const Default = ({ children }) => {
           )
         }
       </GradientTop>
-      
       {children}
+      <Footer />
     </>
   )
 }

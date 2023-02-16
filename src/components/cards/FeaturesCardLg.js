@@ -2,7 +2,7 @@ import Image from 'next/image'
 import styled from 'styled-components'
 
 import { FeatureCard } from './Card'
-import { Interfaces, AgileMet, WebDev, AppDesign } from '../Vectors'
+import { Interfaces, AgileMet, WebDev, AppDesign } from '../icons/FeaturesIcons'
 
 const CardContainer = styled.div`
   display: flex;

@@ -15,6 +15,7 @@ export default createGlobalStyle`
   font-family: 'Montserrat', sans-serif;
   color: ${props => props.theme.pallete.text.primary};
   background-color: ${props => props.theme.pallete.background};
+  margin: 0 auto;
   overflow-x: hidden;
   }
 

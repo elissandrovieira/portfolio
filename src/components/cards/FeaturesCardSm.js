@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
 import { FeatureCard } from '@/components/cards/Card'
-import { Interfaces, AgileMet, WebDev, AppDesign } from '../Vectors'
+import { Interfaces, AgileMet, WebDev, AppDesign } from '../icons/FeaturesIcons'
 
 const CardContainer = styled.div`
   overflow: hidden;

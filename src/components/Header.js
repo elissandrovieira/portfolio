@@ -5,9 +5,9 @@ import styled, { useTheme } from 'styled-components'
 
 import dark from '@/theme/dark'
 import Button from './Button'
-import { LogoIcon, LanguageIcon } from '@/components/Icons'
+import { LogoIcon, LanguageIcon } from '@/components/icons/Icons'
 
-const Container = styled.div`
+const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,32 +41,6 @@ const Menu = styled.ul`
   }
 `
 
-const ContactBtn = styled.button`
-background-color: ${props => props.theme.pallete.button.primary};
-font-family: 'Montserrat', sans-serif;
-font-size: 12px;
-font-weight: 700;
-color: white;
-padding: 7px 10px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-
-`
-const Languages = styled.button`
-display: flex;
-align-items: center;
-background-color: #A1ADC3;
-font-family: 'Montserrat', sans-serif;
-font-size: 12px;
-font-weight: 700;
-color: white;
-padding: 5px 15px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-`
-
 const ThemeBtn = styled.button`
   background-color: transparent;
   border: none;
@@ -87,7 +61,7 @@ const Header = ({handleChangeTheme}) => {
   }
 
   return (
-    <Container className="mainContainer">
+    <Container className="mainContainer" id="header">
       <Link href="/">
         <LogoIcon color={theme.pallete.text.primary} />
       </Link>
