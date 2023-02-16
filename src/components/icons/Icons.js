@@ -153,6 +153,36 @@ export const LightModeIcon = ({ color, margin}) => {
 
   )
 }
+export const LeftMenuIcon = ({ color, margin}) => {
+  return (
+    <>
+      <svg width="11" height="17" viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ margin: margin}}>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.6946 2.57037L3.67381 8.31463L10.6946 14.0589L8.59155 16.6293L0 9.59982V7.02945L8.59155 0L10.6946 2.57037Z" fill={ color ? color : "white" }/>
+      </svg>
+    </>
+  )
+}
+export const RightMenuIcon = ({ color, margin}) => {
+  return (
+    <>
+      <svg width="11" height="17" viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ margin: margin }}>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.305421 14.0589L7.32619 8.31464L0.305422 2.57037L2.40845 2.91508e-06L11 7.02945L11 9.59982L2.40845 16.6293L0.305421 14.0589Z" fill={ color ? color : "white" }/>
+      </svg>
+    </>
+  )
+}
+export const CenterMenuIcon = ({ color, margin}) => {
+  return (
+    <>
+      <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ margin: margin }}>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7089 0.0119629L0.0234375 16.63H4.32592L18.0114 0.0119629H13.7089Z" fill={ color ? color : "white" }/>
+      </svg>
+    </>
+
+
+  )
+}
+
 
 export const HorizontalIcons = () => {
   const theme = useTheme()

@@ -130,13 +130,18 @@ const About = ({ language }) => {
           )}
         <div style={{ display: 'flex' }}>
           <a href={language.about.downloadHref} style={{ textDecoration: 'none' }}>
-            <Button>{language.about.downloadBtn}</Button>
+            <Button
+            margin="0 20px 0 0"
+            >
+              {language.about.downloadBtn}
+            </Button>
           </a>
           <Link href="#contact" legacyBehavior>
             <Button
             border
             color={theme.pallete.text.tertiary}
             backgroundColor={theme.pallete.button.secondary}
+            padding="0 10px"
             >
               {language.about.contactBtn}
             </Button>

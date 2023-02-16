@@ -15,7 +15,7 @@ const HomeBannerMb = styled.section`
   align-items: flex-start;
   max-width: 1200px;
   padding-left: 30px;
-  margin-top: -50px;
+  margin-top: -60px;
   height: 150vh;
   width: 100vw;
 
@@ -29,7 +29,7 @@ const TitleBanner = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 50%;
-  padding-bottom: 50px;
+  padding-bottom: 40px;
 
   @media(max-width: 700px) {
     width: 100%;
