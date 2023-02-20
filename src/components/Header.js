@@ -8,8 +8,8 @@ import { motion } from 'framer-motion'
 
 import MenuMb from './menus/MenuMb'
 import dark from '@/theme/dark'
-import Button from './Button'
-import { LogoIcon, LanguageIcon, LeftMenuIcon, RightMenuIcon, CenterMenuIcon } from '@/components/icons/Icons'
+import Button, { LangButton } from './Button'
+import { LogoIcon, LeftMenuIcon, RightMenuIcon, CenterMenuIcon } from '@/components/icons/Icons'
 
 const Container = styled.header`
   position: relative;
@@ -36,6 +36,11 @@ const Menu = styled.ul`
     margin-right: 35px;
     color: ${props => props.theme.pallete.text.primary};
     cursor: pointer;
+    transition: 100ms;
+
+    :hover{
+      color: ${props => props.theme.pallete.text.tertiary}
+    };
 
     &:last-child{
       margin: 0;
@@ -124,7 +129,7 @@ const Header = ({handleChangeTheme}) => {
               </li>
             </Link>
           </Menu>
-          <Button 
+          <LangButton 
           backgroundColor="transparent"
           border={maxWidthSm ? false : true}
           color={theme.pallete.text.primary}
@@ -133,17 +138,15 @@ const Header = ({handleChangeTheme}) => {
           width="80px"
           margin="0 0 0 35px"
           onClick={(e) => handleChangeLanguage(e)}
+          maxWidthSm={maxWidthSm}
           >
-            <LanguageIcon
-            color={theme.pallete.text.primary}
-            margin= {maxWidthSm ? '0 4px 0 0' : '0 10px 0 0'}
-            />
+            
             {
               locale ==='pt'
               ? 'EN'
               : 'PT'
             }
-          </Button>
+          </LangButton>
           <ThemeBtn
           onClick={handleChangeTheme}
           >

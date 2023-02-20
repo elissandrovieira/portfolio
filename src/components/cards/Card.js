@@ -94,14 +94,16 @@ const ProjectsContent = styled.div`
     font-size: 24px;
     text-align: center;
     margin-top: 20px;
-    height: 30%;
+    height: 25%;
   }
 
   p{
+    display: flex;
+    align-items: center;
     font-size: 14px;
     text-align: center;
     margin: 15px 0 0 0;
-    height: 30%;
+    height: 35%;
   }
 `
 const ProjectSample =  styled.div`

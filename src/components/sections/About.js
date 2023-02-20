@@ -142,6 +142,8 @@ const About = ({ language }) => {
             color={theme.pallete.text.tertiary}
             backgroundColor={theme.pallete.button.secondary}
             padding="0 10px"
+            hoverBackground={theme.pallete.text.tertiary}
+            hoverColor={theme.pallete.button.secondary}
             >
               {language.about.contactBtn}
             </Button>

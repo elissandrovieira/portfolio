@@ -10,6 +10,7 @@ const ProjectsCardLg = ({ language }) => {
       language.projects.projectsList.map((e) => (
         <div key={e.title}>
           <ProjectsCard
+            language={language}
             image={
               <Image
                 src={e.image}

@@ -3,7 +3,7 @@ const pt = {
 
   banner: {
     firstLine: 'Olá mundo!',
-    title: 'SOU O ELI',
+    title: 'EU SOU O ELI',
     lastLine: 'Front End Developer & UI Designer'
   },
 
@@ -73,7 +73,7 @@ const pt = {
       {
         image: '/img/products/to-do-list.png',
         title: 'Lista de tarefas',
-        text: 'Registre suas tarefas, exclua u complete elas.'
+        text: 'Registre tarefas, exclua ou complete suas tarefas.'
       },
     ]
   },
