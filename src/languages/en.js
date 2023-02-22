@@ -56,26 +56,64 @@ const en = {
   projects: {
     title: 'Last Projects',
 
-    detailsBtn: 'See details',
+    repository: 'Repository',
+
+    live: 'LiveView',
 
     seeMoreBtn: 'See more Projects here',
 
+    lastProjects: [
+      {
+        image: '/img/projects/second-hand.png',
+        title: 'Second-Hand Marketplace',
+        text: 'A used items marketplace. Search and buy, sell items.',
+        repository: 'https://github.com/elissandrovieira/second-hand-marketplace',
+        live: 'https://second-hand-marketplace.vercel.app/'
+      },
+      {
+        image: '/img/projects/react-crud-app.png',
+        title: 'CRUD Project',
+        text: 'CRUD Project developed with React.js.',
+        repository: 'https://github.com/elissandrovieira/react-crud-project',
+        live: 'https://react-crud-project-one.vercel.app/'
+      },
+    ],
     projectsList: [
       {
-        image: '/img/products/second-hand.png',
+        image: '/img/projects/second-hand.png',
         title: 'Second-Hand Marketplace',
-        text: 'A used items marketplace. Search and buy, sell items.'
+        text: 'A used items marketplace. Search and buy, sell items.',
+        repository: 'https://github.com/elissandrovieira/second-hand-marketplace',
+        live: 'https://second-hand-marketplace.vercel.app/'
       },
       {
-        image: '/img/products/to-do-list.png',
-        title: 'To-Do List',
-        text: 'Register your tasks, delete or complete them.'
+        image: '/img/projects/react-crud-app.png',
+        title: 'CRUD Project',
+        text: 'CRUD Project developed with React.js.',
+        repository: 'https://github.com/elissandrovieira/react-crud-project',
+        live: 'https://react-crud-project-one.vercel.app/'
       },
-    ]
+      {
+        image: '/img/projects/to-do-list.png',
+        title: 'To-Do List',
+        text: 'Register your tasks, delete or complete them.',
+        repository: 'https://github.com/elissandrovieira/To-do-list',
+        live: 'https://elissandrovieira.github.io/To-do-list/'
+      },
+      {
+        image: '/img/projects/toa-website.png',
+        title: 'The Orange Arrow Website',
+        text: 'The Orange Arrow fashion marketing agency website.',
+        repository: 'https://github.com/elissandrovieira/The-Orange-Arrow-Website',
+        live: 'https://elissandrovieira.github.io/The-Orange-Arrow-Website/'
+      },
+    ],
   },
 
   contact: {
-    title: 'Interested to collaborate together?',
+    title: 'Interested to',
+    title2: 'collaborate',
+    title3: 'together?',
     subtitle: 'Let’s Talk',
     form: {
       fname: 'Enter your name',

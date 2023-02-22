@@ -101,8 +101,6 @@ export const LangButton = ({ children, backgroundColor, hoverColor, color, paddi
     width: width ? width : 'none',
   }
 
-  console.log(isHover)
-
   return(
     <motion.button
     style={buttonStyles}

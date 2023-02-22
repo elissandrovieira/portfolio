@@ -6,6 +6,7 @@ import Link from 'next/link'
 
 const Container = styled.footer`
     background-color: ${props => props.theme.pallete.button.primary};
+    width: 100%;
     
     div{
         display: flex;
@@ -13,7 +14,7 @@ const Container = styled.footer`
         align-items: center;
         height: 50px;
         max-width: 1200px;
-        margin: 50px auto 0 auto;
+        margin: 0 auto;
         padding: 0 15px;
     }
 

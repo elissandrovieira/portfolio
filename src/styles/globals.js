@@ -23,4 +23,9 @@ export default createGlobalStyle`
   background-image: ${props => props.theme.pallete.gradientMb};
   background-size: cover;
   }
+
+  .bottonGradientMb{
+  background-image: ${props => props.theme.pallete.gradientBottomMb};
+  background-size: cover;
+  }
 `

@@ -15,7 +15,7 @@ const AboutSection = styled.section`
   margin: 100px auto 0 auto;
   background-color: ${props => props.theme.pallete.card.primary};
   border-radius: 20px;
-  box-shadow: 10px 10px 50px #13283426;
+  box-shadow: 10px 10px 50px ${props => props.theme.pallete.shadow};
 
   @media (max-width: 1200px) {
     max-width: 100vw;

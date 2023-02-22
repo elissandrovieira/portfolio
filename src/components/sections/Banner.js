@@ -37,27 +37,24 @@ const TitleBanner = styled.div`
    justify-content: center;
   }
 `
-
 const FirstLine = styled.span`
   text-transform: uppercase;
   font-size: 18px;
 `
-
 const Title = styled.h1`
   font-weight: 900;
   font-size: 72px;
   
 `
-
 const LastLine = styled.span`
   font-size: 15px;
   letter-spacing: -0.3px;
 `
-
 const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 50%;
+  overflow: hidden;
 
   div{
     position: relative;

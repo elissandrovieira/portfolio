@@ -71,10 +71,20 @@ const Projects =  styled.div`
   border-radius: 20px;
   background-color: ${props => props.theme.pallete.card.primary};
   box-shadow: 10px 10px 50px ${props => props.theme.pallete.shadow};
+  transition: 100ms;
+  
+  :hover{
+    transform: scale(1.05);
+  }
 
   @media (max-width: 850px) {
     min-width: 300px;
+
+    :hover{
+    transform: none;
+    }
   }
+
 `
 const ImageProducts = styled.div`
 position: relative;
@@ -119,6 +129,8 @@ const ProjectSample =  styled.div`
   border-radius: 20px;
   background-color: ${props => props.theme.pallete.card.secondary};
   box-shadow: 10px 10px 50px ${props => props.theme.pallete.shadow};
+  transition: 100ms;
+  cursor: pointer;
 
   h3{
     font-size: 24px;
@@ -129,6 +141,34 @@ const ProjectSample =  styled.div`
 
   @media (max-width: 850px) {
     min-width: 300px;
+  }
+
+  :hover{
+    transform: scale(1.05);
+  }
+`
+const List =  styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  min-height: 305px;
+  height: 100%;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background-color: ${props => props.theme.pallete.card.primary};
+  box-shadow: 10px 10px 50px ${props => props.theme.pallete.shadow};
+  transition: 100ms;
+
+  h3{
+    font-size: 18px;
+  }
+
+  p{
+    font-size: 12px;
+  }
+
+  :hover{
+    transform: scale(1.05);
   }
 `
 
@@ -156,7 +196,8 @@ export const SkillsCard = ({image, title}) => {
     </>
   )
 }
-export const ProjectsCard = ({image, title, text, language}) => {
+export const ProjectsCard = ({image, title, text, language, repository, live }) => {
+  const theme = useTheme()
   return (
     <>
       <Projects>
@@ -166,22 +207,37 @@ export const ProjectsCard = ({image, title, text, language}) => {
         <ProjectsContent>
           <h3>{ title }</h3>
           <p>{text}</p>
-          <Button
-          padding="7px 30px"
-          fontSize="14px"
-          >
-            {language.projects.detailsBtn}
-          </Button>
+          <div style={{ display: 'flex' }}>
+            <a href={repository} style={{ textDecoration: 'none' }} target="_blank" rel="noreferrer" >
+              <Button
+              margin="0 20px 0 0"
+              >
+                {language.projects.repository}
+              </Button>
+            </a>
+            <a href={live} style={{ textDecoration: 'none' }} target="_blank" rel="noreferrer" >
+              <Button
+              fontSize="10px"
+              border
+              color={theme.pallete.text.tertiary}
+              backgroundColor={theme.pallete.button.secondary}
+              padding="7px 2px"
+              hoverBackground={theme.pallete.text.tertiary}
+              hoverColor={theme.pallete.button.secondary}
+              >
+                {language.projects.live}
+              </Button>
+            </a>
+          </div>
         </ProjectsContent>
       </Projects>
     </>
   )
 }
-
-export const ProjectsCardSample = ({ language }) => {
+export const ProjectsCardSample = ({ language, onClick }) => {
   return (
     <>
-      <ProjectSample>
+      <ProjectSample onClick={onClick}>
         <div>
         <h3>
           {language.projects.seeMoreBtn}
@@ -193,5 +249,41 @@ export const ProjectsCardSample = ({ language }) => {
 
       </ProjectSample>
     </>
+  )
+}
+export const ListCard = ({ language, image, title, text, live, repository }) => {
+  const theme = useTheme()
+  return (
+    <List>
+      <ImageProducts>
+        {image}
+      </ImageProducts>
+      <ProjectsContent>
+        <h3>{ title }</h3>
+        <p>{text}</p>
+        <div style={{ display: 'flex' }}>
+          <a href={repository} style={{ textDecoration: 'none' }} target="_blank" rel="noreferrer" >
+            <Button
+            margin="0 20px 0 0"
+            >
+              {language.projects.repository}
+            </Button>
+          </a>
+          <a href={live} style={{ textDecoration: 'none' }} target="_blank" rel="noreferrer" >
+            <Button
+            fontSize="10px"
+            border
+            color={theme.pallete.text.tertiary}
+            backgroundColor={theme.pallete.button.secondary}
+            padding="7px 2px"
+            hoverBackground={theme.pallete.text.tertiary}
+            hoverColor={theme.pallete.button.secondary}
+            >
+              {language.projects.live}
+            </Button>
+          </a>
+        </div>
+      </ProjectsContent>
+    </List>
   )
 }
