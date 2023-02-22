@@ -47,7 +47,7 @@ const Default = ({ children }) => {
           ? null
           : (
             <Image
-            src={theme === dark ? "/img/gradient/gradient-top-dark.jpg" : "/img/gradient/gradient-top.jpg"}
+            src={theme === dark ? "/img/gradient/gradient-top-dark.png" : "/img/gradient/gradient-top.png"}
             alt="eli.vieira logo"
             quality={100}
             width={1028}

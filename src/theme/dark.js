@@ -17,7 +17,7 @@ const dark = {
     background: '#1F1F21',
     gradient: '../../public/img/gradient/gradient-top-dark.jpg',
     gradientMb: `url('/img/gradient/gradient-top-mb-dark.jpg')`,
-    gradientBottom: '/img/gradient/gradient-bottom-dark.jpg',
+    gradientBottom: '/img/gradient/gradient-bottom-dark.png',
     gradientBottomMb: `url('/img/gradient/gradient-bottom-mb-dark.jpg')`
   }
 }
