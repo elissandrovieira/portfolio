@@ -26,7 +26,7 @@ const Projects = ({language, onClick}) => {
   const maxWidthMb = useMediaQuery('(max-width: 850px)')
   
   return (
-    <ProjectsSection>
+    <ProjectsSection id="projects">
       <h2 style={{marginBottom: maxWidthMb ? 0 :'50px'}}>{language.projects.title}</h2>
       <CardContainer>
       {
