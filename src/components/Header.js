@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -6,6 +6,8 @@ import styled, { useTheme } from 'styled-components'
 import { useMediaQuery } from '@mui/material'
 import { motion } from 'framer-motion'
 
+import en from '../languages/en'
+import pt from '../languages/pt'
 import MenuMb from './menus/MenuMb'
 import dark from '@/theme/dark'
 import Button, { LangButton } from './Button'
@@ -80,6 +82,7 @@ const variants = {
 
 const Header = ({handleChangeTheme}) => {
   const [isOpen, setIsOpen] = useState(false)
+  const [ language, setLanguage ] = useState(en)
 
   const theme =  useTheme()
 
@@ -92,6 +95,13 @@ const Header = ({handleChangeTheme}) => {
     ? push('/', '/', { locale: 'en' })
     : push('/', '/', { locale: 'pt' })
   }
+
+  useEffect(() => {
+    locale === 'pt'
+    ? setLanguage(pt)
+    : setLanguage(en)
+  }, [locale])
+
 
   return (
     <>
@@ -112,20 +122,20 @@ const Header = ({handleChangeTheme}) => {
         <Navigation>
           <Menu>
             <Link href="#features" legacyBehavior scroll={false}>
-              <li>Features</li>
+              <li>{language.menu.features}</li>
             </Link>
             <Link href="#about" legacyBehavior scroll={false}>
-              <li>About</li>
+              <li>{language.menu.about}</li>
             </Link>
             <Link href="#skills" legacyBehavior scroll={false}>
-              <li>Skills</li>
+              <li>{language.menu.skills}</li>
             </Link>
             <Link href="#projects" legacyBehavior scroll={false}>
-              <li>Projects</li>
+              <li>{language.menu.projects}</li>
             </Link>
             <Link href="#contact" legacyBehavior scroll={false}>
               <li>
-                <Button>Contact me</Button>
+                <Button>{language.menu.contact}</Button>
               </li>
             </Link>
           </Menu>

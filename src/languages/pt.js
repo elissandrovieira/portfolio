@@ -1,5 +1,11 @@
 const pt = {
-  title: 'Título português!',
+  menu: {
+    features: 'Características',
+    about: 'Sobre',
+    skills: 'Habilidades',
+    projects: 'Projetos',
+    contact: 'Entre em contato',
+  },
 
   banner: {
     firstLine: 'Olá mundo!',
@@ -13,22 +19,22 @@ const pt = {
       1: {
         image: '/img/icons/interfaces.svg',
         title: 'Interfaces de Alta Fidelidade',
-        text: 'I develop interfaces the way they were thought and designed.'
+        text: 'Desenvolvo interfaces da maneira como foram pensadas e projetadas.'
       },
       2: {
         image: '/img/icons/agile-methodologies.svg',
         title: 'Metodologias Ageis',
-        text: 'I work using agile methodologies, to ensure quality & agility.'
+        text: 'Trabalho utilizando metodologias ágeis, para garantir qualidade e agilidade.'
       },
       3: {
         image: '/img/icons/web-development.svg',
         title: 'Web Development',
-        text: 'I use the best technologies on the market to develop great solutions.'
+        text: 'Utilizo as maiores tecnologias do mercado para desenvolver soluções da melhor maneira.'
       },
       4: {
         image: '/img/icons/web-app-design.svg',
         title: 'Web App Design',
-        text: 'Responsive design',
+        text: 'Design responsivo',
         text2: '&',
         text3: 'Mobile first'
       }

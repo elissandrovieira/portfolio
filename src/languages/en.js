@@ -1,4 +1,12 @@
 const en = {
+  menu: {
+    features: 'Features',
+    about: 'About',
+    skills: 'Skills',
+    projects: 'Projects',
+    contact: 'Contact me',
+  },
+
   banner: {
     firstLine: 'Hello World!',
     title: 'I’M ELI',
