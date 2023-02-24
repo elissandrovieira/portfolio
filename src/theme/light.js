@@ -16,7 +16,7 @@ const light = {
     shadow: '#13283426',
     background: '#EEF0F4',
     gradient: `url('/img/gradient/gradient-top.png')`,
-    gradientBottom: `url(/img/gradient/gradient-bottom.png)`,
+    gradientBottom: '/img/gradient/gradient-bottom.png',
     gradientBottomMb: `url('/img/gradient/gradient-bottom-mb.jpg')`,
     gradientMb: `url('/img/gradient/gradient-top-mb.jpg')`
   }
