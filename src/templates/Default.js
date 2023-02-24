@@ -46,13 +46,11 @@ const Default = ({ children }) => {
           maxWidth
           ? null
           : (
-            <Image
-            src={theme === dark ? "/img/gradient/gradient-top-dark.png" : "/img/gradient/gradient-top.png"}
-            alt="eli.vieira logo"
-            quality={100}
-            width={1028}
-            height={1046}
-            />
+            <div className='homeBanner' style={{
+              display: 'flex',
+              width: '1028px',
+              height: '1046px'
+            }}/>
           )
         }
       </GradientTop>

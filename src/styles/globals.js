@@ -24,6 +24,11 @@ export default createGlobalStyle`
   background-size: cover;
   }
 
+  .homeBanner{
+  background-image: ${props => props.theme.pallete.gradient};
+  background-size: contain;
+  }
+
   .bottonGradientMb{
   background-image: ${props => props.theme.pallete.gradientBottomMb};
   background-size: cover;

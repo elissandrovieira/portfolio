@@ -158,7 +158,7 @@ const Contact = ({ language }) => {
                   >
                     <GithubIcon margin="0 10px 0 0" />
                   </a>
-                  <p>teofiloeli@gmail.com</p>
+                  <p>elissandrovieira</p>
                 </Link>
               </div>
             </LinksContainer>
