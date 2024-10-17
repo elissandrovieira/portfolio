@@ -10,7 +10,7 @@ const en = {
   banner: {
     firstLine: 'Hello World!',
     title: 'I’M ELI',
-    lastLine: 'Front End Developer & UI Designer'
+    lastLine: 'Software Developer & UI Designer'
   },
 
   features: {

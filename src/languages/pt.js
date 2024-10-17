@@ -10,7 +10,7 @@ const pt = {
   banner: {
     firstLine: 'Olá mundo!',
     title: 'EU SOU O ELI',
-    lastLine: 'Front End Developer & UI Designer'
+    lastLine: 'Software Developer & UI Designer'
   },
 
   features: {
